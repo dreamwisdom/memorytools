@@ -1,0 +1,21 @@
+input[type="button"] {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 28px;
+}
+#result td {
+    text-align: center;
+}
+#wrapper {
+     /*width: 960px;*/
+     margin: 0 auto;
+     text-align:center;
+}
+#dashboard, #test-inputs, #result{
+  display:inline-block;
+}
+#table-input td{
+  width:40px;
+}
