@@ -1,37 +1,55 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
 <html>
-	<head>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div id="wrapper">
-		<div class="row">
-		  <input id="myData" type="hidden"/>
-		  <!--h1><time>00:00:00</time></h1-->
-		  <div id="dashboard">
-			Min
-			<input id="min" type="text" value="0" /> Max
-			<input id="max" type="text" value="99" />
-			<br>
-			<br> Col
-			<input id="col" type="text" value="3" /> Row
-			<input id="row" type="text" value="5" />
-			<br>
-			<br> Number can Repeat
-			<input type="checkbox" checked id="repeat" />
-			<br>
-			<br>
-			<input id="generate" type="button" value="Generate" />
-		  </div>
-		  <div id="nb"></div>
-		  <div id="test-inputs"></div>
-		  <div style="clear-both"></div>
-		  <div id="result"></div>
-		  <div id="myButtons"></div>
-		</div>
-		</div>
-		<script src="js/jquery-2.2.0.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/script.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Numbermemorizationtool</title>
+    <meta name="description" content="Number Memorization Tool">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<div id="wrapper" style="margin-top:100px">
+    <div class="row">
+        <input id="myData" type="hidden"/>
+        <!--<h1><time>00:00:00</time></h1>-->
+        <div id="dashboard">
+            Min
+            <input id="min" type="text" value="0" /> Max
+            <input id="max" type="text" value="99" />
+            <br>
+            <br> Col
+            <input id="col" type="text" value="3" /> Row
+            <input id="row" type="text" value="5" />
+            <br>
+            <br> Number can Repeat
+            <input type="checkbox" checked id="repeat" />
+            <br>
+            <br>
+            <input id="generate" type="button" value="Generate" />
+        </div>
+        <div id="nb"></div>
+        <div id="test-inputs"></div>
+        <div style="clear:both;"></div>
+        <div id="result"></div>
+        <div id="myButtons"></div>
+    </div>
+</div>
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-73602609-1");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+</body>
 </html>
