@@ -132,9 +132,9 @@ function showAnswerInputs() {
     $input.appendTo($("#myButtons"));
 
     if(max.toString().length == 1){
-        $("#answer-inputs input[type='text']").css("width", "14px");
+        $("#answer-inputs input[type='number']").css("width", "14px");
     }else{
-        $("#answer-inputs input[type='text']").css("width", "28px");
+        $("#answer-inputs input[type='number']").css("width", "28px");
     }
     // focus on next input when full
     $("#table-input td input").keyup(function(){
@@ -153,6 +153,7 @@ function showAnswerInputs() {
             }
         }
     });
+    $('#table-input td input')[0].focus();
 }
 
 function autoCorrect() {
