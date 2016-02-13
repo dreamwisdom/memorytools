@@ -26,7 +26,7 @@ $(document).ready(function() {
             $("#dashboard").hide();
             generate(min, max, col, row, repeat);
             // add button
-            var $input = $('<input id="test" type="button" value="Answer" onclick="showTestInputs()"  />');
+            var $input = $('<input id="answer" type="button" value="Answer" onclick="showAnswerInputs()"  />');
             $input.appendTo($("#wrapper"));
         }else{
             $("#wrapper").prepend('<div class="alert alert-danger alert-dismissable">'
@@ -84,6 +84,7 @@ function generate(min, max, col, row, repeat) {
         }
         $("#nb").append("<br>");
     }
+    $("#generate").focus();
 }
 
 function repeatArray(min, max, nbTotal) {
@@ -105,13 +106,14 @@ function nonRepeatArray(min, max, nbTotal) {
 function resetGame() {
     $("#dashboard").show();
     $("#nb").empty();
-    $("#test-inputs").empty();
+    $("#answer-inputs").empty();
     $("#result").empty();
     $("#reset").remove();
     resetTimer();
+    $("#generate").focus();
 }
 
-function showTestInputs() {
+function showAnswerInputs() {
     stopTimer();
     var o = "<table id='table-input' class='table table-striped table-bordered'>";
 
@@ -123,17 +125,34 @@ function showTestInputs() {
         o += "</tr>";
     }
     o += "</table>";
-    $("#test-inputs").html(o);
+    $("#answer-inputs").html(o);
     $("#nb").empty();
-    $("#test").remove();
+    $("#answer").remove();
     var $input = $('<input id="correct" type="button" value="Correct" onclick="autoCorrect()"  />');
     $input.appendTo($("#myButtons"));
 
     if(max.toString().length == 1){
-        $("#test-inputs input[type='text']").css("width", "14px");
+        $("#answer-inputs input[type='text']").css("width", "14px");
     }else{
-        $("#test-inputs input[type='text']").css("width", "28px");
+        $("#answer-inputs input[type='text']").css("width", "28px");
     }
+    // focus on next input when full
+    $("#table-input td input").keyup(function(){
+        if(this.value.toString().length >= max.toString().length){
+            var nextTDInput = $(this).parent().next('td').children("input");
+            if(nextTDInput[0] != undefined){
+                nextTDInput.focus();
+            }else{
+                var nextTR = $(this).parents("tr").next("tr");
+                var nextInupt = nextTR.find("input:first")[0];
+                if(nextInupt != undefined){
+                    nextInupt.focus();
+                }else{
+                    $("#correct").focus();
+                }
+            }
+        }
+    });
 }
 
 function autoCorrect() {
@@ -169,6 +188,8 @@ function autoCorrect() {
 
     var $input = $('<input id="reset" type="button" value="Reset" onclick="resetGame()"  />');
     $input.appendTo($("#myButtons"));
+
+    $("#reset").focus();
 }
 
 // ****** Timer stuff ********
