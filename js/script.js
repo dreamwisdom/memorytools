@@ -28,6 +28,7 @@ $(document).ready(function() {
             // add button
             var $input = $('<input id="answer" type="button" value="Answer" onclick="showAnswerInputs()"  />');
             $input.appendTo($("#wrapper"));
+            $("#answer")[0].focus();
         }else{
             $("#wrapper").prepend('<div class="alert alert-danger alert-dismissable">'
                 + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>'
@@ -84,7 +85,6 @@ function generate(min, max, col, row, repeat) {
         }
         $("#nb").append("<br>");
     }
-    $("#generate").focus();
 }
 
 function repeatArray(min, max, nbTotal) {
