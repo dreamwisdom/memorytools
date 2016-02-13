@@ -2,7 +2,7 @@ input[type="button"] {
   margin-top: 20px;
 }
 
-input[type="text"] {
+input[type="number"] {
   width: 28px;
 }
 #result td {
@@ -18,4 +18,10 @@ input[type="text"] {
 }
 #table-input td{
   width:40px;
+}
+/* turn off "input number" spinner*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

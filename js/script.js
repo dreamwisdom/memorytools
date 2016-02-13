@@ -120,7 +120,7 @@ function showAnswerInputs() {
     for (var r = 0; r < row; r++) {
         o += "<tr>";
         for (var c = 0; c < col; c++) {
-            o += "<td><input type='text' /> </td>";
+            o += "<td><input type='number' /> </td>";
         }
         o += "</tr>";
     }
