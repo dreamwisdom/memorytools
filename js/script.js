@@ -59,7 +59,7 @@ function shuffleArray(array) {
 function generatePool(min, max) {
     var arr = [];
     for (var i = min; i <= max; i++) {
-        arr[i] = i;
+        arr.push(i);
     }
     return arr
 }
